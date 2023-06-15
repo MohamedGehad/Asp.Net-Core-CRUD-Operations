@@ -1,0 +1,76 @@
+﻿@model EmployeeViewModel
+
+@*@inject IDepartmentRepository departmentRepository*@
+
+@inject IUnitOfWork uniteOfWork
+
+
+@{
+
+	var departments = new SelectList(ViewData["Departments"] as IEnumerable<department>, "id", "Name");
+	//var departments = new SelectList(uniteOfWork.DepartmentRepository.GetAll(), "id", "name");
+	//var departments = new SelectList(ViewBag.departments.GetAll(), "id", "name");
+} 
+
+
+<div class="form-group">
+	<label class="col-form-label"> Name</label>
+	<input asp-for="Name" class="form-control" />
+	<span asp-validation-for="Name" class="text-denger"></span>
+</div>
+<div class="form-group">
+	<label class="col-form-label"> Age</label>
+	<input asp-for="Age" class="form-control" />
+	<span asp-validation-for="Age" class="text-denger"></span>
+</div>
+<div class="form-group">
+	<label class=" col-form-label">Address</label>
+	<input asp-for="Address" class="form-control" />
+	@*<span asp-validation-for="Address" class="text-denger"></span>*@
+
+</div>
+
+<div class="form-group">
+	<label class=" col-form-label">Sallary</label>
+	<input asp-for="Salary" class="form-control" />
+	<span asp-validation-for="Salary" class="text-denger"></span>
+
+</div>
+
+<div class="form-group">
+	<label class="col-form-label" asp-for="IsActive"></label>
+	<input class="form-control" asp-for="IsActive" />
+</div>
+
+
+<div class="form-group">
+	<label class=" col-form-label">PhoneNumber</label>
+	<input asp-for="Phone" class="form-control" />
+	<span asp-validation-for="Phone" class="text-denger"></span>
+
+</div>
+<div class="form-group">
+	<label class=" col-form-label">Email</label>
+	<input asp-for="Email" class="form-control" />
+	<span asp-validation-for="Email" class="text-denger"></span>
+
+</div>
+<div class="form-group">
+	<label class=" col-form-label">HairDate</label>
+	<input asp-for="HairDate" class="form-control" />
+
+</div>
+
+<div>
+	<label class="col-form-label" > Department</label>
+	<select class="form-control" asp-items="@departments">
+		<option value="@null">---select dept</option>
+
+	</select>
+
+</div>
+
+<div class=" form-group">
+	<label class="col-form-label">image</label>
+	<input class="form-control" type="file" asp-for="Image" />
+</div>  

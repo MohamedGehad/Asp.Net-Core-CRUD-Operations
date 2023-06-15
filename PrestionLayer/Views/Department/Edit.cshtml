@@ -1,0 +1,46 @@
+﻿@model department;
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<h1>Department Edit</h1>
+
+
+
+<form asp-action="Edit">
+
+	<div class="form-group">
+		<div asp-validation-summary="All;"></div> @*ALL ERR MASSGE AS LIST*@
+		<label class="col-form-label"> Code</label>
+		<input asp-for="Code" class="form-control" />
+		<span asp-validation-for="Code" class="text-denger"></span>
+	</div>
+	<div class="form-group">
+		<label class="col-form-label"> Name</label>
+		<input asp-for="Name" class="form-control" />
+		<span asp-validation-for="Name" class="text-denger"></span>
+	</div>
+	<div class="form-group">
+		<label class=" col-form-label">DateOfCreation </label>
+		<input asp-for="DateOfCreation" class="form-control" />
+		<span asp-validation-for="DateOfCreation" class="text-denger"></span>
+
+	</div>
+
+
+	<input type="submit" value="save" class="btn btn-primary" /> ||
+
+	<a asp-action="index" class="btn btn-light">Back To List</a>
+
+</form>
+
+
+@section ValidtionSeaction{
+
+
+	@*<script src="d:\dot net\asp.net core\session 02\demos\prestionlayersoul\prestionlayer\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js"></script>*@
+	@*<script src="d:\dot net\asp.net core\session 02\demos\prestionlayersoul\prestionlayer\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js"></script>*@
+
+	<partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,26 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Employee Details</h1>
+
+<div>
+    <Partial name="PartialViews/DetailsEmployeePartialViews" />
+
+
+    <a asp-action="Index" asp-route-id="@Model.Id " class=" btn btn-secondary">ok</a> ||
+
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</div>
+
+
+
+@section ValidtionSeaction{
+
+
+    @*<script src="d:\dot net\asp.net core\session 02\demos\prestionlayersoul\prestionlayer\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js"></script>*@
+    @*<script src="d:\dot net\asp.net core\session 02\demos\prestionlayersoul\prestionlayer\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js"></script>*@
+
+    <partial name="_ValidationScriptsPartial" />
+}

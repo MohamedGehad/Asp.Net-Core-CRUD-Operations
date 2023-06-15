@@ -1,0 +1,31 @@
+﻿@model EmployeeViewModel
+
+@{
+    ViewData["Title"] = "create";
+} 
+
+<h1>Create Employee</h1>
+
+<br />
+<br />  
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+
+    <Partial name="PartialViews/createEditePartialViews"/>
+
+    <input type="submit" value="submit" class="btn btn-primary" /> ||
+
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+
+</form>
+
+
+
+@section ValidtionSeaction{
+
+
+@*<script src="d:\dot net\asp.net core\session 02\demos\prestionlayersoul\prestionlayer\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js"></script>*@
+@*<script src="d:\dot net\asp.net core\session 02\demos\prestionlayersoul\prestionlayer\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js"></script>*@
+
+<partial name="_ValidationScriptsPartial" />
+}
